@@ -25,6 +25,6 @@ class FloorDispatcher:
     def get_floor(self, floor):
         """Возвращает этаж или вызывает исключение при недопустимом этаже."""
         try:
-            return self.valid_floors[floor]  # Если этаж недопустим, KeyError вызовет исключение
+            return self.valid_floors[floor]  
         except KeyError:
             raise InvalidFloorError(f"Этаж {floor} недопустим.")

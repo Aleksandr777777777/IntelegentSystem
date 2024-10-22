@@ -1,14 +1,13 @@
 class Elevator:
     def __init__(self, current_floor, floor_dispatcher):
         self.current_floor = current_floor
-        self.floor_dispatcher = floor_dispatcher  # Диспетчер этажей
+        self.floor_dispatcher = floor_dispatcher  
         self.movement_count = 0
         self.command_log = []
         self.busy = False
         self.direction = None
         self.target_floor = None
         
-        # Таблица действий для различных направлений
         self.movement_actions = {
             'up': self.move_up,
             'down': self.move_down
@@ -27,7 +26,7 @@ class Elevator:
 
     def move_down(self):
         next_floor = self.current_floor - 1
-        self.current_floor = self.floor_dispatcher.get_floor(next_floor)  # Проверка через диспетчер
+        self.current_floor = self.floor_dispatcher.get_floor(next_floor) 
         self.movement_count += 1
         self.command_log.append(f"Опуститься на {self.current_floor}")
 
